@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Mongo Scraper</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+
+  <body class="container">
+
+  <ul class="nav nav-pills">
+      <li role="presentation" class="active"><a href="#" class="mongo-btn">Mongo Scraper</a></li>
+    <li role="presentation"><a href="#" class="home">Home</a></li>     
+      <li role="presentation"><a href="#" class="saved-articles">Saved Articles</a></li>
+      <li role="presentation"><a href="#" class="scrape-articles">Scrape New Articles!</a></li>
+  </ul>
+
+
+  <div class="jumbotron">
+    <div id=header>
+      <h1 class="title">Mongo Scraper</h1>
+      <p class="source">The Washington Post Edition</p>
+    </div>
+  </div>
+
+  <table id="articles">
+    <thead>
+      <tr>
+        <th id = "article-title">Title</th>
+        <th id = "article-summary">Summary</th>
+        <th id = "article-save"></th>
+      </tr>
+    </thead>
+      <tbody>
+        
+      </tbody>
+    </table>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,39 @@
+.jumbotron {
+	background: lightgrey;
+}
+
+.title, .source {
+	text-align: center;
+}
+
+#articles th {
+	border 1px solid #ddd;
+	padding: 8px;
+	font-size: 20px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	background-color: #006dcc;
+	color: white;
+}
+
+#article-title {
+	width: 400px;
+}
+
+#article-summary {
+	width: 575px;
+}
+
+#articles {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#articles tr:nth-child(even) {background-color: #f2f2f2;}
+
+#articles tr:hover {background-color: #ddd;}
+
+#articles td {
+	border 1px solid #ddd;
+	padding: 8px;
+}

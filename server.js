@@ -18,11 +18,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Set up a static folder (public) for our web app
 app.use(express.static("public"));
 
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/news";
 
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/news", {
-  useMongoClient: true
+mongoose.connect(MONGODB_URI, {
+	useMongoClient: true
 });
+// mongoose.connect("mongodb://localhost/news", {
+//   useMongoClient: true
+// });
 
 // Routes
 

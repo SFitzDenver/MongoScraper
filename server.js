@@ -23,24 +23,24 @@ app.use(express.static("public"));
 // var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/news";
 // let uri = 'mongodb://<dbuser>:<dbpassword>@ds117509.mlab.com:17509/heroku_f6rh85v6';
 
-// mongoose.Promise = Promise;
+mongoose.Promise = Promise;
 // mongoose.connect(MONGODB_URI, {
 // 	useMongoClient: true
 // });
 
 mongoose.connect("mongodb://heroku_f6rh85v6:8e793mu8nhkiltpt1rancf526u@ds117509.mlab.com:17509/heroku_f6rh85v6");
 //mongoose.connect("mongodb://localhost/mongoscraper");
-var db = mongoose.connection;
+// var db = mongoose.connection;
 
 // Show any mongoose errors
-db.on("error", function(error) {
-  console.log("Mongoose Error: ", error);
-});
+// db.on("error", function(error) {
+//   console.log("Mongoose Error: ", error);
+// });
 
-// Once logged in to the db through mongoose, log a success message
-db.once("open", function() {
-  console.log("Mongoose connection successful.");
-});
+// // Once logged in to the db through mongoose, log a success message
+// db.once("open", function() {
+//   console.log("Mongoose connection successful.");
+// });
 
 // mongoose.connect("mongodb://localhost/news", {
 //   useMongoClient: true

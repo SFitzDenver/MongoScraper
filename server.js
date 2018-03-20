@@ -14,16 +14,34 @@ var db = require("./models");
 // Initialize Express
 var app = express();
 
+var PORT = process.env.PORT || 3000;
+
 app.use(bodyParser.urlencoded({ extended: true }));
 // Set up a static folder (public) for our web app
 app.use(express.static("public"));
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/news";
+// var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/news";
+// let uri = 'mongodb://<dbuser>:<dbpassword>@ds117509.mlab.com:17509/heroku_f6rh85v6';
 
-mongoose.Promise = Promise;
-mongoose.connect(MONGODB_URI, {
-	useMongoClient: true
+// mongoose.Promise = Promise;
+// mongoose.connect(MONGODB_URI, {
+// 	useMongoClient: true
+// });
+
+mongoose.connect("mongodb://heroku_f6rh85v6:8e793mu8nhkiltpt1rancf526u@ds117509.mlab.com:17509/heroku_f6rh85v6");
+//mongoose.connect("mongodb://localhost/mongoscraper");
+var db = mongoose.connection;
+
+// Show any mongoose errors
+db.on("error", function(error) {
+  console.log("Mongoose Error: ", error);
 });
+
+// Once logged in to the db through mongoose, log a success message
+db.once("open", function() {
+  console.log("Mongoose connection successful.");
+});
+
 // mongoose.connect("mongodb://localhost/news", {
 //   useMongoClient: true
 // });
@@ -110,7 +128,7 @@ app.post("/articles/:id", function(req, res) {
 });
 
 
-app.listen(3000, function() {
+app.listen(PORT, function() {
 	console.log("App running on port 3000!");
 });
 	
